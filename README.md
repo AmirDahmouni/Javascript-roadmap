@@ -36,6 +36,8 @@ typeof array
 
 **Abstract comparison** (e.g. ==) checks for value equality with coercion allowed
 
+## Global Scope, Function Scope, Block Scope & Lexical Scope
+
 In JavaScript, **scope** determines where variables, functions, and objects are accessible in your code.
 ```javascript
 var globalVar = "I am global";
@@ -60,6 +62,9 @@ showGlobal();
 console.log(globalVar); // Accessible here too
 console.log(blockVar); // Error: blockVar is not defined
 ```
+
+## Closure
+
 A **closure** occurs when a function "remembers" the variables from its lexical scope, even after the outer function has finished executing. this logic is used by react components
 ```javascript
 function createCounter() {
