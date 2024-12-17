@@ -33,6 +33,7 @@ array.length
 typeof array
 ```
 **Strict comparison** (e.g., ===) checks for value equality without allowing coercion
+
 **Abstract comparison** (e.g. ==) checks for value equality with coercion allowed
 
 In JavaScript, **scope** determines where variables, functions, and objects are accessible in your code.
