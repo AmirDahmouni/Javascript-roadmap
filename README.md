@@ -1,11 +1,13 @@
-Javascript roadmap
------------------
+# 🚀 JavaScript Roadmap
 
-The object type refers to a compound value where you can set properties that each hold their own values of any type.
+## 📦 Object Type
+
+The **object** type refers to a compound value where you can set properties. Each property can hold its own value of any type.
+
+### 📝 Example:
+```javascript
 var obj = {
-	a: "hello world", // property
-	b: 42,
-	c: true
+  a: "hello world",
+  b: 42,
+  c: true
 };
-obj.a;
-obj["a"];
