@@ -1,6 +1,6 @@
 # 🚀 JavaScript Roadmap
 
-## 📦 Object Type
+## Object Type
 
 The **object** type refers to a compound value where you can set properties. Each property can hold its own value of any type.
 
@@ -94,6 +94,26 @@ Host objects are provided by the runtime environment, such as window, NodeList, 
 
 ## What is origin policy
 The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number
+
+## Strict Mode
+In Node.js (and JavaScript in general), strict mode is a feature that enforces a stricter set of rules for JavaScript code.
+Modules in Node.js automatically run in strict mode
+```javascript
+"use strict";
+let public = 1; // Error: Unexpected strict mode reserved word
+
+var myVar = 10;
+delete myVar; // Error: Cannot delete 'myVar'
+
+x = 3.14; // Error: 'x' is not defined
+console.log(x);
+
+function myFunction() {
+  "use strict";
+  y = 3.14; // Error: 'y' is not defined
+}
+
+```
 
 
 
