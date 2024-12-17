@@ -112,8 +112,29 @@ function myFunction() {
   "use strict";
   y = 3.14; // Error: 'y' is not defined
 }
-
 ```
+
+## Callback Hell
+Callback hell known as Pyramid of Doom occurs in JavaScript when multiple asynchronous operations are nested within one another using callbacks.
+```javascript
+fs.readFile("file1.txt", "utf8", (err, data1) => {
+  if (err) throw err;
+  console.log("File 1 content:", data1);
+
+  fs.readFile("file2.txt", "utf8", (err, data2) => {
+    if (err) throw err;
+    console.log("File 2 content:", data2);
+
+    fs.readFile("file3.txt", "utf8", (err, data3) => {
+      if (err) throw err;
+      console.log("File 3 content:", data3);
+
+      console.log("All files have been read!");
+    });
+  });
+});
+```
+
 
 
 
