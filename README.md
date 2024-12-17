@@ -14,3 +14,9 @@ var obj = {
 
 JavaScript provides a **typeof** operator that can examine a value and tell you what type it is:
 ```javascript
+typeof obj
+
+a = 42;
+typeof a;				// "number"
+```
+
