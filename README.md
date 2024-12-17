@@ -35,6 +35,11 @@ typeof array
 **Strict comparison** (e.g., ===) checks for value equality without allowing coercion
 
 **Abstract comparison** (e.g. ==) checks for value equality with coercion allowed
+```javascript
+var err1 = Error('message');
+var err2 = new Error('message');
+console.log(err1 === err2) // true
+```
 
 ## Global Scope, Function Scope, Block Scope & Lexical Scope
 
@@ -80,5 +85,15 @@ const counter = createCounter();
 counter(); // 1
 counter(); // 2
 ```
+
+## Host objects & Native Objects
+
+Native objects are objects that are part of the JavaScript language, such as String, Math, RegExp, Object, Function, etc.
+
+Host objects are provided by the runtime environment, such as window, NodeList, console
+
+## What is origin policy
+The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number
+
 
 
