@@ -10,6 +10,7 @@ var obj = {
   b: 42,
   c: true
 };
+```
 
 JavaScript provides a **typeof** operator that can examine a value and tell you what type it is:
 ```javascript
