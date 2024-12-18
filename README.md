@@ -224,7 +224,7 @@ readFile1((err, data1) => {
   });
 });
 ```
-
+## iterating
 iterating over obeject proprities
 ```javascript
 for (var property in obj) { console.log(property); }
@@ -237,6 +237,7 @@ for (var i = 0; i < arr.length; i++)
 arr.forEach(function (el, index) { ... })
 ```
 
+## Search
 A **linear search** runs in at worst linear time and makes at most n comparisons, where n is the length of the list
 ```javascript
 function linearSearch(array, toFind){
@@ -266,6 +267,9 @@ var binarySearch = function(array, value) {
      return -1;
 }
 ```
+
+## Functions
+
 A generator is a function in JavaScript that can pause and resume its execution, producing multiple values using the yield keyword.
 ```javascript
 function* generatorExample() {
@@ -329,6 +333,38 @@ An **Immediately Invoked Function Expression** (IIFE) is a function that is defi
 })();
 ```
 
+**Currying** is a technique in JavaScript where a function returns another function that takes arguments one by one
+```javascript
+function multiply(a) {
+  return function(b) {
+    return a * b;
+  };
+}
+```
+
+A **higher-order function** is a function that either takes one or more functions as arguments, returns a function, or both.
+```javascript
+// Function that takes another function as an argument
+function add(a, b, callback) {
+  return callback(a + b);
+}
+
+add(2, 3, function(result) {
+  console.log(result); // 5
+});
+```
+**Function.prototype.bind** creates a new function that, when called, has its this value set to the provided value and can optionally pre-fill arguments.
+
+```javascript
+const obj = { value: 42 };
+
+function getValue() {
+  return this.value;
+}
+
+const boundGetValue = getValue.bind(obj);
+console.log(boundGetValue()); // 42
+```
 
 **Object.freeze()**: Prevents modifications to an object's properties
 **const**: Declares a variable whose reference cannot be reassigned, but the value it holds can still be modified.
@@ -342,28 +378,6 @@ console.log(obj.a); // 1
 const obj = { a: 1 };
 obj.a = 2; // This is allowed
 obj = {};
-```
-
-**Currying** is a technique in JavaScript where a function returns another function that takes arguments one by one
-```javascript
-function multiply(a) {
-  return function(b) {
-    return a * b;
-  };
-}
-```
-
-
-A **higher-order function** is a function that either takes one or more functions as arguments, returns a function, or both.
-```javascript
-// Function that takes another function as an argument
-function add(a, b, callback) {
-  return callback(a + b);
-}
-
-add(2, 3, function(result) {
-  console.log(result); // 5
-});
 ```
 
 Difference between **undefined** and **not defined**
@@ -408,15 +422,3 @@ const newObj = { ...obj, b: 3 }; // { a: 1, b: 3 }
 ```
 
 
-**Function.prototype.bind** creates a new function that, when called, has its this value set to the provided value and can optionally pre-fill arguments.
-
-```javascript
-const obj = { value: 42 };
-
-function getValue() {
-  return this.value;
-}
-
-const boundGetValue = getValue.bind(obj);
-console.log(boundGetValue()); // 42
-```
