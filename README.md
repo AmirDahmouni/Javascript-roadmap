@@ -246,6 +246,8 @@ function linearSearch(array, toFind){
   return -1;
 }
 ```
+
+A **Binary search** find a target value in a sorted array by repeatedly dividing the search interval in half and comparing the target with the middle element.
 ```javascript
 var binarySearch = function(array, value) {
     var guess,
@@ -261,7 +263,6 @@ var binarySearch = function(array, value) {
 	else
 	    max = guess - 1;
      }
-
      return -1;
 }
 ```
