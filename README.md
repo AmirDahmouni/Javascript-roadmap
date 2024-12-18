@@ -229,6 +229,14 @@ iterating over obeject proprities
 ```javascript
 for (var property in obj) { console.log(property); }
 Object.keys(obj).forEach(function (property) { ... })
+
+Object.values()
+Object.entries()
+
+const mapped = Object.entries(obj).map(([key, value]) => {
+  return [key.toUpperCase(), value * 2];
+});
+
 ```
 
 iterating over array items
@@ -404,6 +412,18 @@ import add from './math';
 console.log(add(2, 3)); // 5
 ```
 
+The **import * as x from 'X'** syntax is used to import all exports from a module as a single object
+
+```javascript
+export const add = (a, b) => a + b;
+export const subtract = (a, b) => a - b;
+
+import * as math from './math';
+
+console.log(math.add(2, 3)); // 5
+console.log(math.subtract(5, 3)); // 2
+```
+
 Benefits of using **spread syntax**
 ```javascript
 const arr1 = [1, 2];
@@ -420,5 +440,35 @@ onsole.log(sum(...combined));
 const obj = { a: 1, b: 2 };
 const newObj = { ...obj, b: 3 }; // { a: 1, b: 3 }
 ```
+
+**.apply** and **.call** both are used to invoke a function with a specific this value, but the difference lies in how arguments are passed
+```javascript
+function greet(name, age) {
+  console.log(`Hello, ${name}. You are ${age} years old.`);
+}
+greet.call(null, "Alice", 30);
+greet.apply(null, ["Alice", 30]);
+```
+
+
+The primary **drawback** of true private variables in JavaScript (using methods like closures or # in class fields)
+```javascript
+class MyClass {
+  #privateVar;
+
+  constructor(value) {
+    this.#privateVar = value;
+  }
+
+  getPrivateVar() {
+    return this.#privateVar;
+  }
+}
+
+const obj = new MyClass(10);
+console.log(obj.getPrivateVar()); // 10
+console.log(obj.#privateVar); // SyntaxError: Private field '#privateVar' must be declared in an enclosing class
+```
+
 
 
