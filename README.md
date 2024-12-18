@@ -322,6 +322,14 @@ setTimeout(function() {
 }, 1000);
 ```
 
+An **Immediately Invoked Function Expression** (IIFE) is a function that is defined and executed immediately after its creation.
+```javascript
+(function() {
+  console.log('I am an IIFE');
+})();
+```
+
+
 **Object.freeze()**: Prevents modifications to an object's properties
 **const**: Declares a variable whose reference cannot be reassigned, but the value it holds can still be modified.
 
@@ -363,4 +371,40 @@ Difference between **undefined** and **not defined**
 let x;
 console.log(x); // undefined
 console.log(y); // ReferenceError: y is not defined
+```
+
+Coercion in JavaScript is the automatic or implicit conversion of values from one type to another
+```javascript
+console.log('5' + 1); // "51" (string concatenation)
+console.log('5' - 1); // 4 (string is coerced to a number)
+```
+
+
+**export default** is used to export a single value or entity from a module, making it the default export
+```javascript
+export default function add(a, b) {
+  return a + b;
+}
+
+import add from './math';
+console.log(add(2, 3)); // 5
+```
+
+Benefits of using **spread syntax**
+```javascript
+
+
+const arr1 = [1, 2];
+const newArr = [...arr1]; // Copy of arr1
+
+const arr2 = [3, 4];
+const combined = [...newArr, ...arr2]; // [1, 2, 3, 4]
+
+function sum(a, b, c) {
+  return a + b + c;
+}
+onsole.log(sum(...combined));
+
+const obj = { a: 1, b: 2 };
+const newObj = { ...obj, b: 3 }; // { a: 1, b: 3 }
 ```
