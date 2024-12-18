@@ -9,6 +9,30 @@ var obj = {
   c: true
 };
 ```
+**iterating** over obeject proprities
+```javascript
+for (var property in obj) { console.log(property); }
+Object.keys(obj).forEach(function (property) { ... })
+
+Object.values()
+Object.entries()
+
+const mapped = Object.entries(obj).map(([key, value]) => {
+  return [key.toUpperCase(), value * 2];
+});
+```
+
+**Object Destructuring**: Unpacks properties based on the property names
+```javascript
+const person = { name: 'John', age: 30, city: 'New York' };
+
+// Destructuring the object
+const { name, age } = person;
+
+console.log(name); // John
+console.log(age);  // 30
+
+```
 
 **Strict comparison** (e.g., ===) checks for value equality without allowing coercion
 

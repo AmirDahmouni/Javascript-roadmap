@@ -19,21 +19,22 @@ a = 42;
 typeof a;				// "number"
 ```
 
-An array is an **object** that holds values (of any type) not particularly in named properties/keys
-```javascript
-const array = [
-	"hello world",
-	42,
-	true
-];
+## Host objects & Native Objects
 
-array[0];
-array.length
-typeof array
-```
+Native objects are objects that are part of the JavaScript language, such as String, Math, RegExp, Object, Function, etc.
+
+Host objects are provided by the runtime environment, such as window, NodeList, console
+
+## What is origin policy
+The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number
 
 **Hoisting** in JavaScript is the behavior where variable and function declarations are moved to the top of their containing scope during the compile phase, before the code is executed.
 
+JavaScript uses both pass-by-value and pass-by-reference, but the distinction depends on the type of data being passed.
+
+**Primitive types** (pass-by-value): a copy of the value is passed
+
+**Reference types** (pass-by-reference): a reference to the original object is passed, not a copy
 
 **Transpiling code** is the process of converting code written in one programming language or version of a language into another version or language, typically to make it compatible with different environments
 Tools like **Babel** are commonly used for transpiling JavaScript code.
@@ -76,16 +77,6 @@ console.log(globalVar); // Accessible here too
 console.log(blockVar); // Error: blockVar is not defined
 ```
 
-
-## Host objects & Native Objects
-
-Native objects are objects that are part of the JavaScript language, such as String, Math, RegExp, Object, Function, etc.
-
-Host objects are provided by the runtime environment, such as window, NodeList, console
-
-## What is origin policy
-The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number
-
 ## Strict Mode
 In Node.js (and JavaScript in general), strict mode is a feature that enforces a stricter set of rules for JavaScript code.
 Modules in Node.js automatically run in strict mode
@@ -104,27 +95,6 @@ function myFunction() {
   y = 3.14; // Error: 'y' is not defined
 }
 ```
-
-## iterating
-iterating over obeject proprities
-```javascript
-for (var property in obj) { console.log(property); }
-Object.keys(obj).forEach(function (property) { ... })
-
-Object.values()
-Object.entries()
-
-const mapped = Object.entries(obj).map(([key, value]) => {
-  return [key.toUpperCase(), value * 2];
-});
-
-```
-iterating over array items
-```javascript
-for (var i = 0; i < arr.length; i++)
-arr.forEach(function (el, index) { ... })
-```
-
 
 
 Difference between **undefined** and **not defined**
@@ -166,42 +136,20 @@ var person = Person(); // No 'new'
 var person = new Person();  // Person { name: 'John' }
 ```
 
-**Object Destructuring**: Unpacks properties based on the property names
+The main difference between **Map** and **WeakMap** in JavaScript is how they handle keys and garbage collection:
 ```javascript
-const person = { name: 'John', age: 30, city: 'New York' };
+const map = new Map();
+let obj = {};
+map.set(obj, 'value');
+obj = null;  // The key-value pair will still exist in the Map
 
-// Destructuring the object
-const { name, age } = person;
 
-console.log(name); // John
-console.log(age);  // 30
-
+const weakMap = new WeakMap();
+let obj = {};
+weakMap.set(obj, 'value');
+obj = null;  // The key-value pair will be removed from WeakMap and garbage collected
 ```
 
-**Array Destructuring**: Unpacks values based on their position in the array.
-```javascript
-const numbers = [10, 20, 30];
-
-// Destructuring the array
-const [first, second] = numbers;
-
-console.log(first);  // 10
-console.log(second); // 20
-```
-
-
-The key differences between **forEach** and **map** are Return Value,Modification of Original Array and Usage
-```javascript
-const arr = [1, 2, 3, 4];
-
-// forEach (no return value)
-arr.forEach(num => console.log(num * 2)); // Logs 2, 4, 6, 8
-
-// map (returns a new array)
-const doubled = arr.map(num => num * 2);
-console.log(doubled); // [2, 4, 6, 8]
-
-```
 
 
 

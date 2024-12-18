@@ -1,5 +1,7 @@
 ## Functions
 
+
+
 A generator is a function in JavaScript that can pause and resume its execution, producing multiple values using the yield keyword.
 ```javascript
 function* generatorExample() {
