@@ -392,8 +392,6 @@ console.log(add(2, 3)); // 5
 
 Benefits of using **spread syntax**
 ```javascript
-
-
 const arr1 = [1, 2];
 const newArr = [...arr1]; // Copy of arr1
 
@@ -407,4 +405,18 @@ onsole.log(sum(...combined));
 
 const obj = { a: 1, b: 2 };
 const newObj = { ...obj, b: 3 }; // { a: 1, b: 3 }
+```
+
+
+**Function.prototype.bind** creates a new function that, when called, has its this value set to the provided value and can optionally pre-fill arguments.
+
+```javascript
+const obj = { value: 42 };
+
+function getValue() {
+  return this.value;
+}
+
+const boundGetValue = getValue.bind(obj);
+console.log(boundGetValue()); // 42
 ```
