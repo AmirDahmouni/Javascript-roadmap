@@ -2,7 +2,9 @@
 
 
 
-A generator is a function in JavaScript that can pause and resume its execution, producing multiple values using the yield keyword.
+A **generator** is a function in JavaScript that can pause and resume its execution, producing multiple values using the yield keyword.
+
+**yield** is used in a generator function (function*), while **await** is used in an async function.
 ```javascript
 function* generatorExample() {
   yield 1;
@@ -13,6 +15,12 @@ const gen = generatorExample();
 console.log(gen.next().value); // 1
 console.log(gen.next().value); // 2
 console.log(gen.next().value); // 3
+
+async function fetchData() {
+  let result = await fetch('https://api.example.com/data');
+  console.log(result);
+}
+
 ```
 
 **Extending built-in** JavaScript objects is generally not recommended as it can lead to unexpected behavior, conflicts, and reduce code readability.
